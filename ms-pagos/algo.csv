@@ -1,0 +1,21 @@
+ID,Parent,Label
+1,,Clasificación de los medios de comunicación según cómo se propagan las OEM
+2,1,Medios de transmisión basados en cables de cobre
+3,2,Características generales
+4,2,Par telefónico
+5,4,Instalación exterior
+6,4,Instalación interior
+7,2,Par trenzado
+8,7,Características de los cables de par trenzado
+9,7,Tipos de Cable Estructurado
+10,7,Armado de cables
+11,2,Cable coaxial
+12,11,Características generales
+13,11,Detalles constructivos
+14,11,Respuesta de los cables coaxiales a la transmisión de señales digitales
+15,1,Transmisión por OEM. Radiocomunicaciones
+16,15,Características de las ondas de radio
+17,15,Propagación de las ondas de radio
+18,17,Propagación por onda terrestre
+19,17,Propagación por onda reflejada espacial o ionosférica
+20,17,Propagación por onda directa
