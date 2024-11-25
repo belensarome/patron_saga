@@ -1,4 +1,4 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, jsonify
 
 from app.mapping import StockSchema
 from app.services import StockService
@@ -29,3 +29,16 @@ def ingresar_producto():
         status_code = 500
 
     return stock_schema.dump(stock), status_code
+
+@stock_bp.route('/inventarios/stock/<int:producto_id>', methods=['GET'])
+def consultar_stock(producto_id):
+    cantidad = stock_service.consultar_stock(producto_id)
+    
+    if cantidad is not None:
+        response = {'producto_id': producto_id, 'stock': cantidad}
+        status_code = 200
+    else:
+        response = {'error': 'El producto no existe o no tiene movimientos registrados'}
+        status_code = 404
+
+    return jsonify(response), status_code
