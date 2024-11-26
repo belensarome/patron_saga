@@ -13,7 +13,7 @@ def retirar_producto():
     try:
         stock = stock_service.retirar(stock)
     except:
-        return jsonify({"message": "Stock agotado"}), 501
+        return jsonify({"message": "Stock insuficiente"}), 500
     
     if stock.id:
         status_code = 200 
