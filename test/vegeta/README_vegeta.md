@@ -28,4 +28,6 @@ Ejemplo simple para método GET:
 `echo "GET http://localhost:5000/api/v1/" | vegeta attack -rate=10000 -duration=30s | tee resultado.bin | vegeta report`
 
 
+vegeta attack -rate=60 -duration=30s -targets=./test_carga.txt | tee resultado.bin | vegeta report | tee resultados.txt
+
 

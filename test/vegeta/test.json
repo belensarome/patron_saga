@@ -1,5 +1,13 @@
+
 {
-  "producto": 2,
-  "cantidad": 8,
-	"entrada_salida": -1
+  "producto": {
+    "id": 2,
+    "nombre": "Manzana",
+		"precio": 44,
+    "activado": true
+    
+  },
+  "direccion_envio": "Calle Falsa 123",
+  "cantidad": 2.0,
+  "medio_pago": "Tarjeta de Crédito"
 }
