@@ -15,7 +15,7 @@ class ClienteInventarioService:
     def retirar_producto(self, carrito: Carrito) -> None:
         self.stock.producto = carrito.producto.id
         self.stock.cantidad = carrito.cantidad
-        self.stock.entrada_salida = 2
+        self.stock.entrada_salida = -1
         stock_schema = StockSchema()
         r = requests.post(f'{self.URL}inventarios/retirar', json=stock_schema.dump(self.stock))
 

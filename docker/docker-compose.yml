@@ -1,6 +1,6 @@
 services:
     ecomerce:
-        image: app-commerce:v1.0.7
+        image: app-commerce:v1.0.8
         container_name: ecomerce
         ports:
             - 5000:5000
