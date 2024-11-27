@@ -7,11 +7,18 @@ import os
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from app.config.cache_config import cache_config
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 
 db = SQLAlchemy()
 migrate = Migrate()
 ma = Marshmallow()
 cache = Cache()
+
+limiter = Limiter(
+    get_remote_address,
+    default_limits=["150 per second"] 
+)
 
 def create_app() -> None:
 
@@ -25,7 +32,10 @@ def create_app() -> None:
     db.init_app(app)
     migrate.init_app(app, db)
     cache.init_app(app, config=cache_config)
+    cache.add('en_uso', False)
     
+    limiter.init_app(app)
+
     from app.resources import stock_bp
     app.register_blueprint(stock_bp, url_prefix='/api/v1')
     

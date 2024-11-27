@@ -12,7 +12,6 @@ class StockRepository:
     
     
     def get_stock(self,  producto_id:int) -> int:
-        print(repr(producto_id))
         result = db.session.query(func.sum(Stock.cantidad * Stock.entrada_salida)).filter(Stock.producto == int(producto_id)).scalar()
         return result
 

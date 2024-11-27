@@ -162,3 +162,4 @@ cython_debug/
 #.idea/
 
 /test/vegeta/resultados/
+/test/vegeta/resultados-ms-inventario/

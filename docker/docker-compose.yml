@@ -76,7 +76,7 @@ services:
             - DEV_DATABASE_URI=${DEV_DATABASE_URI}
             - PROD_DATABASE_URI=${PROD_DATABASE_URI}
     msinventarios:
-        image: msinventario:v1.0.4
+        image: msinventario:v1.0.5-gunicorn
         container_name: msinventarios
         depends_on:
             - ecomerce
